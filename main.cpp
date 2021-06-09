@@ -21,13 +21,13 @@ void pickForks(int pNumber)
 {
     if (pNumber < N - 1)
         {
-            //All threads except the last thread will first pick the left fork and then the right fork.
+            //All threads except the last thread (philosopher) will first pick the left fork and then the right fork.
             pthread_mutex_lock(&forks[pNumber]);
             pthread_mutex_lock(&forks[pNumber + 1]);
         }
         else
         {
-            //the last thread will first pick the right fork and then the left fork.
+            //the last thread (philosopher) will first pick the right fork and then the left fork.
             pthread_mutex_lock(&forks[0]);
             pthread_mutex_lock(&forks[pNumber]);
         }
