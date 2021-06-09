@@ -110,12 +110,12 @@ int main()
     }
 
     char a = 0;
-    while (a != 'e' && a!='E')
+    while (a != 'e' && a!='E') //If the user presses key 'e', then the main thread will terminate all philosopher threads.
         cin >> a;
 
     for (int i = 0; i < N; i++)
     {
-        pthread_cancel(tid[i]);
+        pthread_cancel(tid[i]);  //sending a signal to all philosopher threads to terminate.
     }
 
     for (int i = 0; i < N; i++)
