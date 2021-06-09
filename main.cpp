@@ -49,7 +49,7 @@ void eat(int pNumber)
     sleep(time);
 
     pthread_mutex_lock(&sc_lock);
-    cout << "Philosopher no= " << pNumber << " has finished eating.\n";
+    cout << "Philosopher no= " << pNumber << " has finished eating." << endl;
     pthread_mutex_unlock(&sc_lock);
 }
 
